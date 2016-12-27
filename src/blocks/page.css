@@ -1,3 +1,6 @@
 .page {
-    background: red;
+    font-family: Helvetica, Arial, 'sans-serif';
+    font-size: var(--fontbasesize);
+    color: var(--basecolor);
+    background-color: var(--basebg);
 }
