@@ -58,7 +58,8 @@ gulp.task('css:test', function () {
 
 gulp.task('html:build', function () {
     gulp.src('src/*.html')
-        .pipe(gulp.dest(paths.build));
+        .pipe(gulp.dest(paths.build))
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('serve', ['build'], function () {
@@ -74,10 +75,10 @@ gulp.task('watch', function () {
     gulp.watch([paths.img], ['img:build']);
     gulp.watch('src/*.html', ['html:build']);
     gulp.watch([paths.src + '**/*.css'], ['css:test']);
-    gulp.watch('', browserSync.reload);
+    gulp.watch(['./build'], browserSync.reload);
 });
 
 
 gulp.task('build', ['js:build', 'img:build', 'css:build', 'html:build']);
 gulp.task('test', ['js:test', 'css:test']);
-gulp.task('default', ['build', 'test', 'browser-sync', 'watch']);
+gulp.task('default', ['build', 'test', 'serve', 'watch']);
