@@ -1,0 +1,21 @@
+{
+  "name": "cart",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Vladimir Abiduev <gunlinux@ya.ru> (https://gunlinux.org)"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/gunlinux/retpl",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^5.0.0"
+  }
+}

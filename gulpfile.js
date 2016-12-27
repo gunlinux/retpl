@@ -49,7 +49,7 @@ gulp.task('css:build', function () {
 
 
 gulp.task('css:test', function () {
-    gulp.src([paths.src + '**/*.css'])
+    gulp.src([paths.src + '**/*.css', '!src/bower/**/*.css'])
         .pipe(
             postcss([
                 require('stylelint')(),
