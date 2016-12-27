@@ -25,12 +25,14 @@ gulp.task('js:test', function () {
 
 gulp.task('js:build', function () {
     return gulp.src(paths.scripts)
-        .pipe(gulp.dest(paths.build + 'js'));
+        .pipe(gulp.dest(paths.build + 'js'))
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('img:build', function () {
     gulp.src(paths.img)
-        .pipe(gulp.dest(paths.build + 'img'));
+        .pipe(gulp.dest(paths.build + 'img'))
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('css:build', function () {
@@ -41,7 +43,8 @@ gulp.task('css:build', function () {
                 require('autoprefixer')(),
                 require('postcss-csso')()
             ]))
-        .pipe(gulp.dest(paths.build));
+        .pipe(gulp.dest(paths.build))
+        .pipe(reload({stream: true}));
 });
 
 
@@ -71,10 +74,10 @@ gulp.task('serve', ['build'], function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['gulpfile.js', paths.scripts], ['js:test']);
+    gulp.watch(['gulpfile.js', paths.scripts], ['js:test', 'js:build']);
     gulp.watch([paths.img], ['img:build']);
     gulp.watch('src/*.html', ['html:build']);
-    gulp.watch([paths.src + '**/*.css'], ['css:test']);
+    gulp.watch([paths.src + '**/*.css'], ['css:test', 'css:build']);
     gulp.watch(['./build'], browserSync.reload);
 });
 
