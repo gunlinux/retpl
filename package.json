@@ -10,17 +10,17 @@
   "license": "ISC",
   "devDependencies": {
     "bower": "^1.8.0",
-    "browser-sync": "^2.18.5",
+    "browser-sync": "^2.24.7",
     "eslint-config-yandex": "^1.0.6",
     "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1",
-    "gulp-postcss": "^6.2.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-posthtml": "^2.0.0",
     "htmlnano": "^0.1.5",
-    "postcss-csso": "^1.1.2",
-    "postcss-import": "^9.0.0",
+    "postcss-csso": "^3.0.0",
+    "postcss-import": "^12.0.0",
     "precss": "^1.4.0",
-    "stylelint": "^7.7.0",
-    "stylelint-config-standard": "^15.0.1"
+    "stylelint": "^9.5.0",
+    "stylelint-config-standard": "^18.2.0"
   }
 }
